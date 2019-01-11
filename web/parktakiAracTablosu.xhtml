@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>OtoparkWeb!</title>
+        <h:outputStylesheet library="css" name="demo.css"/>
+    </h:head>
+<h:body>
+<div class="ustcizgi">
+</div>
+
+<div class="clearfix"></div>
+
+<div class="ustserit">
+	<div class="logo">
+		<img src="resources/images/logo1.png"/>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<div class="serit">
+	<ul id="menu">
+		<li><a href="index.xhtml">ANASAYFA</a></li>
+		<li>
+			<a href="#">Raporlar - Aboneler</a>
+			<ul>
+				<li><a href="KullanicilarTablosu.xhtml">kullanıcı tablosu</a></li>
+				<li><a href="aboneAraclarTablosu.xhtml">aboneler tablosu</a></li>
+				<li><a href="aboneAraclarTablosu_ekle.xhtml">abone tablosu ekle</a></li>
+				<li><a href="aboneAraclarTablosu_sil.xhtml">abone tablosu sil</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">raporlar - abone olmayanlar</a>
+			<ul>
+				<li><a href="parktakiAracTablosu.xhtml">parktaki araçlar</a></li>
+				<li><a href="parktakiAracTablosu_ekle.xhtml">parktaki araçlar - ekle</a></li>
+				<li><a href="parktakiAracTablosu_sil.xhtml">parktaki araçlar - sil</a></li>
+				
+			</ul>
+		</li>
+                <li><a href="guvenlik.html">Güvenlik</a></li>
+		<li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+		<li><a href="iletisim.html">İLETİŞİM</a></li>
+	</ul>
+</div>
+    <h:form style="">
+            <h3>Park Edilmiş Araçlar Tablosu</h3>
+ 
+            <h:dataTable value="#{ekonomikLuksBean.ekonomikLuksArac}" var="araclar"
+           border="1" cellpadding="5" cellspacing="0">
+           <h:column>
+           <f:facet name="header">Plaka</f:facet>
+           #{araclar.ID}
+           </h:column>
+            <h:column>
+            
+           <h:column>
+           <f:facet name="header">Stok</f:facet>
+           #{araclar.Stok}
+            </h:column>
+            <h:column>
+            <f:facet name="header">1 Günlük park Bedeli</f:facet>
+           #{araclar.FIYAT}
+            </h:column>
+            </h:dataTable>
+            
+            <h:commandButton value="Araç Ekle" action="EkonomikLuksAraclarTablosu_ekle">
+                <f:setPropertyActionListener target="#{databaseBean.tabloAdi}" value="EkonomikLuks" />
+            </h:commandButton>
+            <h:commandButton value="Araç Sil" action="EkonomikLuksAraclarTablosu_sil">
+                <f:setPropertyActionListener target="#{databaseBean.tabloAdi}" value="EkonomikLuks" />
+            </h:commandButton>
+                
+            </h:form> 
+<div class="clearfix"></div>
+<div class="footer">
+	Copyright  2016
+</div>
+<div class="clearfix"></div>
+</h:body>
+</html>

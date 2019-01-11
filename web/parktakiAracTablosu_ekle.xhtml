@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>OtoparkWeb</title>
+        <h:outputStylesheet library="css" name="demo.css"/>
+    </h:head>
+<h:body>
+<div class="ustcizgi">
+</div>
+
+<div class="clearfix"></div>
+
+<div class="ustserit">
+	<div class="logo">
+		<img src="resources/images/logo1.png"/>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+<div class="clearfix"></div>
+<div class="serit">
+	<ul id="menu">
+		<li><a href="index.xhtml">ANASAYFA</a></li>
+		<li>
+			<a href="#">Raporlar - Aboneler</a>
+			<ul>
+				<li><a href="KullanicilarTablosu.xhtml">kullanıcı tablosu</a></li>
+				<li><a href="aboneAraclarTablosu.xhtml">aboneler tablosu</a></li>
+				<li><a href="aboneAraclarTablosu_ekle.xhtml">abone tablosu ekle</a></li>
+				<li><a href="aboneAraclarTablosu_sil.xhtml">abone tablosu sil</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">raporlar - abone olmayanlar</a>
+			<ul>
+				<li><a href="parktakiAracTablosu.xhtml">parktaki araçlar</a></li>
+				<li><a href="parktakiAracTablosu_ekle.xhtml">parktaki araçlar - ekle</a></li>
+				<li><a href="parktakiAracTablosu_sil.xhtml">parktaki araçlar - sil</a></li>
+				
+			</ul>
+		</li>
+                <li><a href="guvenlik.html">Güvenlik</a></li>
+		<li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+		<li><a href="iletisim.html">İLETİŞİM</a></li>
+	</ul>
+</div>
+    <h1>Ekonomik Luks Araçlar Tablosu : Araç Ekle</h1>
+ <h:form>
+ <h:panelGrid columns="3">
+     
+ <h:outputText value="Marka :"/>
+ <h:inputText id="markaInputText" required="true"
+ requiredMessage="Lütfen bir marka girin"
+ value="#{databaseBean.marka}" maxlength="30"/>
+ <h:message for="markaInputText"/>
+ 
+ <h:outputText value="park edilenin Modeli:"/>
+ <h:inputText id="modelInputText" required="true"
+ requiredMessage="Lütfen bir model girin"
+ value="#{databaseBean.kiralamaModeli}" maxlength="30"/>
+ <h:message for="modelInputText"/>
+ 
+ <h:outputText value="Stok"/>
+ <h:inputText id="stokInputText" required="true"
+ requiredMessage="Lütfen stok girin"
+ value="#{databaseBean.stok}" maxlength="1500"/>
+ <h:message for="stokInputText"/>
+ 
+ <h:outputText value="Günlük park Bedeli"/>
+ <h:inputText id="fiyatInputText" required="true"
+ requiredMessage="Lütfen TL bazında fiyat girin"
+ value="#{databaseBean.fiyat}" maxlength="1000"/>
+ <h:message for="fiyatInputText"/>
+ 
+ </h:panelGrid>
+     
+     <h:commandButton value="Aracı Ekle" action="#{databaseBean.save}" >
+         <f:setPropertyActionListener target="#{databaseBean.tabloAdi}" value="EkonomikLuks" />
+     </h:commandButton>
+<h:commandButton value="Temizle" type="reset"/>
+
+ </h:form>
+ <h:outputLink value="#{databaseBean.donus()}">EkonomikLuks Araç Tablosuna Geri Dön</h:outputLink>
+<div class="clearfix"></div>
+<div class="footer">
+	Copyright  2016
+</div>
+<div class="clearfix"></div>
+</h:body>
+</html>

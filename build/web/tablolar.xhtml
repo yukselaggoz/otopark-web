@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>OtoparkWeb!</title>
+        <h:outputStylesheet library="css" name="demo.css"/>
+    </h:head>
+    <h:body>
+        <div class="ustcizgi"></div>
+        <div class="clearfix"></div>
+
+        <div class="ustserit">
+            <div class="logo">
+		<img src="resources/images/logo1.png"/>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div class="clearfix"></div>
+        <div class="serit">
+	<ul id="menu">
+		<li><a href="index.xhtml">ANASAYFA</a></li>
+		<li>
+			<a href="#">Raporlar - Aboneler</a>
+			<ul>
+				<li><a href="KullanicilarTablosu.xhtml">kullanıcı tablosu</a></li>
+				<li><a href="aboneAraclarTablosu.xhtml">aboneler tablosu</a></li>
+				<li><a href="aboneAraclarTablosu_ekle.xhtml">abone tablosu ekle</a></li>
+				<li><a href="aboneAraclarTablosu_sil.xhtml">abone tablosu sil</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">raporlar - abone olmayanlar</a>
+			<ul>
+				<li><a href="parktakiAracTablosu.xhtml">parktaki araçlar</a></li>
+				<li><a href="parktakiAracTablosu_ekle.xhtml">parktaki araçlar - ekle</a></li>
+				<li><a href="parktakiAracTablosu_sil.xhtml">parktaki araçlar - sil</a></li>
+				
+			</ul>
+		</li>
+                <li><a href="guvenlik.html">Güvenlik</a></li>
+		<li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
+		<li><a href="iletisim.html">İLETİŞİM</a></li>
+	</ul>
+</div>
+        <div class="form" align="center">
+            <center>
+            <h:form style="margin-top: 20px;">
+                <h3>Tabloları Görüntüle</h3>
+                <h:panelGrid columns="1">
+                    <h:commandButton value="HesabimTablosu" action="HesabimTablosu" />
+                    <h:commandButton value="KullanicilarTablosu" action="KullanicilarTablosu" />
+                    <h:commandButton value="aboneAraclarTablosu" action="aboneAraclarTablosu" />
+                    <h:commandButton value="aboneAraclarTablosu_ekle" action="aboneAraclarTablosu_ekle" />
+                    <h:commandButton value="aboneAraclarTablosu_sil" action="aboneAraclarTablosu_sil" />
+                    <h:commandButton value="parktakiAracTablosu" action="parktakiAracTablosu" />
+                    <h:commandButton value="parktakiAracTablosu_ekle" action="parktakiAracTablosu_ekle" />
+                    <h:commandButton value="parktakiAracTablosu_sil" action="parktakiAracTablosu_sil" />
+                </h:panelGrid>
+            </h:form> 
+            </center>
+        </div>
+            
+        <div class="clearfix"></div>
+        <div class="footer">Copyright  2016</div>
+        <div class="clearfix"></div>
+    </h:body>
+</html>
